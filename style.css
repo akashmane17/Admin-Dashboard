@@ -5,7 +5,8 @@
   --color-primary: #7380ec;
   --color-danger: #ff7782;
   --color-success: #41f1b6;
-  --color-warning: #ffbb55;
+  /* --color-warning: #ffbb55; */
+  --color-warning: #ffa426;
   --color-white: #fff;
   --color-info-dark: #7d8da1;
   --color-info-light: #dceleb;
@@ -23,6 +24,15 @@
   --card-padding: 1.8rem;
   --padding-1: 1.2rem; 
 
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-theme-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0,4);
   --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
@@ -133,7 +143,6 @@ aside {
 }
 
 aside .top {
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -156,7 +165,7 @@ aside .close {
 /* ====SIDEBAR===== */
 
 aside .sidebar {
-  background: white;
+  background: var(--color-white);
   display: flex;
   flex-direction: column;
   height: 86vh;
@@ -590,7 +599,7 @@ main .recent-orders a {
 
   aside {
     position: fixed;
-    left: 0;
+    left: -100%;
     background-color: var(--color-white);
     width: 18rem;
     z-index: 3;
@@ -598,6 +607,13 @@ main .recent-orders a {
     height: 100vh;
     padding-right: var(--card-padding);
     display: none;
+    animation: showMenu 400ms ease forwards;
+  }
+
+  @keyframes showMenu {
+    to {
+    left: 0;
+  }
   }
 
   aside .logo {
